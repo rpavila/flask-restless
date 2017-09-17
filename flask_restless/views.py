@@ -1064,7 +1064,7 @@ class API(ModelView):
         inst = get_by(self.session, self.model, instid, self.primary_key)
         if inst is None:
             return {_STATUS: 404}, 404
-        return self._inst_to_dict(inst)
+        return self.serialize(inst)
 
     def _search(self):
         """Defines a generic search function for the database model.
